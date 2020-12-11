@@ -38,6 +38,6 @@ exec tail -F ./logs/es.log & # this tail on the elasticsearch logs is a temporar
 exec java -jar lib/sonar-application-$SONAR_VERSION.jar \
   -Dsonar.log.console=true \
   -Dsonar.web.javaAdditionalOpts="$SONARQUBE_WEB_JVM_OPTS -Djava.security.egd=file:/dev/./urandom" \
-  -Dsonar.search.javaAdditionalOpts="-Dnode.store.allow_mmap=false" \
+  -Dsonar.search.javaAdditionalOpts=-Dnode.store.allow_mmapfs=false \
   "${sq_opts[@]}" \
   "$@"

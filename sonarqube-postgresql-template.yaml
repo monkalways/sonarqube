@@ -124,6 +124,8 @@ objects:
                   value: sonar
                 - name: SONAR_FORCEAUTHENTICATION
                   value: "true"
+                - name: sonar.search.javaAdditionalOpts
+                  value: -Dnode.store.allow_mmapfs=false
               volumeMounts:
                 - mountPath: /opt/sonarqube/data
                   name: sonar-data
