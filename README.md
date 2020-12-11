@@ -1,3 +1,3 @@
-oc import-image postgres:10.4 --from=docker.io/library/postgres:10.4 --confirm
+oc new-build https://github.com/monkalways/sonarqube.git --strategy=docker --name=sonarqube --to=sonarqube:7.7
 
-oc import-image sonarqube:7.9.5-community --from=docker.io/library/sonarqube:7.9.5-community --confirm
+oc new-app -f sonarqube-postgresql-template.yaml --param=SONARQUBE_VERSION=7.7

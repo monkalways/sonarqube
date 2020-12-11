@@ -306,32 +306,32 @@ objects:
               namespace: openshift
           type: ImageChange
         - type: ConfigChange
-  - apiVersion: v1
-    kind: PersistentVolumeClaim
-    metadata:
-      labels:
-        app: sonarqube
-      name: postgresql-sonarqube-data
-    spec:
-      accessModes:
-        - ReadWriteOnce
-      # storageClassName: ${POSTGRESQL_PERSISTENT_VOLUME_CLASS}
-      resources:
-        requests:
-          storage: "${POSTGRESQL_VOLUME_CAPACITY}"
-  - apiVersion: v1
-    kind: PersistentVolumeClaim
-    metadata:
-      labels:
-        app: sonarqube
-      name: sonarqube-data
-    spec:
-      accessModes:
-        - ReadWriteOnce
-      # storageClassName: ${SONAR_PERSISTENT_VOLUME_CLASS}
-      resources:
-        requests:
-          storage: "${SONAR_VOLUME_CAPACITY}"
+  # - apiVersion: v1
+  #   kind: PersistentVolumeClaim
+  #   metadata:
+  #     labels:
+  #       app: sonarqube
+  #     name: postgresql-sonarqube-data
+  #   spec:
+  #     accessModes:
+  #       - ReadWriteOnce
+  #     # storageClassName: ${POSTGRESQL_PERSISTENT_VOLUME_CLASS}
+  #     resources:
+  #       requests:
+  #         storage: "${POSTGRESQL_VOLUME_CAPACITY}"
+  # - apiVersion: v1
+  #   kind: PersistentVolumeClaim
+  #   metadata:
+  #     labels:
+  #       app: sonarqube
+  #     name: sonarqube-data
+  #   spec:
+  #     accessModes:
+  #       - ReadWriteOnce
+  #     # storageClassName: ${SONAR_PERSISTENT_VOLUME_CLASS}
+  #     resources:
+  #       requests:
+  #         storage: "${SONAR_VOLUME_CAPACITY}"
 parameters:
   - displayName: SonarQube version
     name: SONARQUBE_VERSION

@@ -12,8 +12,8 @@ LABEL summary="$SUMMARY" \
     release="$SONAR_VERSION"
 
 # Define Plug-in Versions
-ARG SONAR_ZAP_PLUGIN_VERSION=1.2.0
-ENV SONARQUBE_PLUGIN_DIR="$SONARQUBE_HOME/extensions/plugins"
+# ARG SONAR_ZAP_PLUGIN_VERSION=1.2.0
+# ENV SONARQUBE_PLUGIN_DIR="$SONARQUBE_HOME/extensions/plugins"
 
 # Switch to root for package installs
 USER 0
@@ -23,10 +23,10 @@ USER 0
 # --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # sonar-zap-plugin - https://github.com/Coveros/zap-sonar-plugin
-RUN apk add curl
-RUN set -x \
-    && cd "$SONARQUBE_PLUGIN_DIR" \
-    && curl -o "sonar-zap-plugin-$SONAR_ZAP_PLUGIN_VERSION.jar" -fsSL "https://github.com/Coveros/zap-sonar-plugin/releases/download/sonar-zap-plugin-$SONAR_ZAP_PLUGIN_VERSION/sonar-zap-plugin-$SONAR_ZAP_PLUGIN_VERSION.jar"
+# RUN apk add curl
+# RUN set -x \
+#     && cd "$SONARQUBE_PLUGIN_DIR" \
+#     && curl -o "sonar-zap-plugin-$SONAR_ZAP_PLUGIN_VERSION.jar" -fsSL "https://github.com/Coveros/zap-sonar-plugin/releases/download/sonar-zap-plugin-$SONAR_ZAP_PLUGIN_VERSION/sonar-zap-plugin-$SONAR_ZAP_PLUGIN_VERSION.jar"
 
 WORKDIR $SONARQUBE_HOME
 
