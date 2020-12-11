@@ -1,4 +1,4 @@
-FROM sonarqube:8.2-community
+FROM sonarqube:8.6-community
 
 ENV SUMMARY="SonarQube for bcgov OpenShift" \
     DESCRIPTION="This image creates the SonarQube image for use at bcgov/OpenShift"
